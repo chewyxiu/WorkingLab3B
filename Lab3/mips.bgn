@@ -1,0 +1,328 @@
+Release 14.7 - Bitgen P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Loading device for application Rf_Device from file '7a100t.nph' in environment
+C:\Xilinx\14.7\ISE_DS\ISE\.
+   "MIPS" is an NCD, version 3.2, device xc7a100t, package csg324, speed -1
+Opened constraints file MIPS.pcf.
+
+Wed Nov 12 11:57:53 2014
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\bitgen.exe -intstyle ise -w -g DebugBitstream:No -g Binary:no -g CRC:Enable -g ConfigRate:3 -g CclkPin:PullUp -g M0Pin:PullUp -g M1Pin:PullUp -g M2Pin:PullUp -g ProgPin:PullUp -g InitPin:Pullup -g TckPin:PullUp -g TdiPin:PullUp -g TdoPin:PullUp -g TmsPin:PullUp -g Disable_JTAG:No -g UnusedPin:PullDown -g UserID:0xFFFFFFFF -g ExtMasterCclk_en:Disable -g ConfigFallback:Disable -g BPI_page_size:1 -g BPI_sync_mode:Disable -g SPI_32bit_addr:No -g SPI_buswidth:1 -g SPI_Fall_Edge:No -g OverTempPowerDown:Disable -g USR_ACCESS:None -g JTAG_XADC:Enable -g DCIUpdateMode:AsRequired -g StartUpClk:CClk -g DONE_cycle:4 -g GTS_cycle:5 -g GWE_cycle:6 -g Match_cycle:Auto -g Security:None -g ICAP_select:Auto -g DonePipe:Yes -g Encrypt:No MIPS.ncd 
+
+ERROR:Bitgen:342 - This design contains pins which have locations (LOC) that are
+   not user-assigned or I/O Standards (IOSTANDARD) that are not user-assigned. 
+   This may cause I/O contention or incompatibility with the board power or
+   connectivity affecting performance, signal integrity or in extreme cases
+   cause damage to the device or the components to which it is connected.  To
+   prevent this error, it is highly suggested to specify all pin locations and
+   I/O standards to avoid potential contention or conflicts and allow proper
+   bitstream creation.  To demote this error to a warning and allow bitstream
+   creation with unspecified I/O location or standards, you may apply the
+   following bitgen switch: -g UnconstrainedPins:Allow
+This message applies to the following I/O ports:
+   Addr_Data<3>
+   Addr_Data<4>
+   Addr_Data<5>
+   Addr_Data<6>
+   Addr_Data<7>
+   Addr_Data<8>
+   Addr_Data<9>
+   Addr_Data<10>
+   Addr_Data<11>
+   Addr_Data<12>
+   Addr_Data<13>
+   Addr_Data<14>
+   Addr_Data<15>
+   RESET
+   Addr_Data<17>
+   Addr_Data<18>
+   Addr_Data<19>
+   Addr_Data<20>
+   Addr_Data<21>
+   Addr_Data<22>
+   Addr_Data<23>
+   Addr_Data<24>
+   Addr_Data<25>
+   Addr_Data<26>
+   Addr_Data<27>
+   Addr_Data<28>
+   Addr_Data<29>
+   Addr_Data<30>
+   Addr_Data<31>
+   Data_In<0>
+   Data_In<1>
+   Data_In<2>
+   Data_In<3>
+   Data_In<4>
+   Data_In<5>
+   Data_In<6>
+   Data_In<7>
+   Data_In<8>
+   Data_In<9>
+   Data_In<10>
+   Data_In<11>
+   Data_In<12>
+   Data_In<13>
+   Data_In<14>
+   Data_In<15>
+   Data_In<16>
+   Data_In<17>
+   Data_In<18>
+   Data_In<19>
+   Data_In<20>
+   Instr<13>
+   Instr<8>
+   Instr<6>
+   Data_Out<17>
+   Data_Out<19>
+   Instr<9>
+   Data_Out<21>
+   Instr<10>
+   Data_Out<20>
+   Instr<16>
+   Data_Out<25>
+   Data_Out<27>
+   Data_Out<26>
+   Data_Out<29>
+   Data_Out<28>
+   Data_Out<31>
+   Data_Out<30>
+   Addr_Instr<2>
+   Addr_Instr<3>
+   Addr_Instr<4>
+   Addr_Instr<5>
+   Addr_Instr<13>
+   Addr_Instr<7>
+   Addr_Instr<15>
+   Addr_Instr<12>
+   Addr_Instr<10>
+   Addr_Instr<11>
+   Addr_Instr<9>
+   Addr_Instr<6>
+   Addr_Instr<14>
+   Addr_Instr<8>
+   Addr_Instr<16>
+   Addr_Instr<17>
+   Addr_Instr<18>
+   Addr_Instr<19>
+   Addr_Instr<20>
+   Addr_Instr<21>
+   Addr_Instr<22>
+   Addr_Instr<23>
+   Addr_Instr<24>
+   Addr_Instr<25>
+   Addr_Instr<26>
+   Addr_Instr<27>
+   Addr_Instr<28>
+   Addr_Instr<29>
+   Addr_Instr<30>
+   Addr_Instr<31>
+   Addr_Data<0>
+   Addr_Data<1>
+   Addr_Data<2>
+   Data_In<21>
+   Data_In<22>
+   Data_In<23>
+   Data_In<24>
+   Data_In<25>
+   Data_In<26>
+   Data_In<27>
+   Data_In<28>
+   Data_In<29>
+   Data_In<30>
+   Data_In<31>
+   Addr_Data<16>
+   MemWrite
+   MemRead
+   Instr<0>
+   Instr<1>
+   Instr<2>
+   Instr<3>
+   Instr<4>
+   Instr<5>
+   Data_Out<18>
+   Instr<7>
+   Data_Out<23>
+   Data_Out<22>
+   Data_Out<24>
+   Instr<15>
+   Instr<12>
+   Instr<11>
+   Instr<14>
+   Addr_Instr<0>
+   Addr_Instr<1>
+   Instr<17>
+   Instr<18>
+   Instr<23>
+   Instr<20>
+   CLK
+   Instr<21>
+   Instr<22>
+   Instr<19>
+   Instr<24>
+   Instr<25>
+   Instr<26>
+   Instr<27>
+   Instr<28>
+   Instr<30>
+   Instr<29>
+   Instr<31>
+   Data_Out<0>
+   Data_Out<1>
+   Data_Out<9>
+   Data_Out<13>
+   Data_Out<11>
+   Data_Out<8>
+   Data_Out<3>
+   Data_Out<4>
+   Data_Out<5>
+   Data_Out<2>
+   Data_Out<10>
+   Data_Out<7>
+   Data_Out<12>
+   Data_Out<6>
+   Data_Out<14>
+   Data_Out<15>
+   Data_Out<16>
+INFO:Bitgen:40 - Replacing "Auto" with "NoWait" for option "Match_cycle".  Most
+   commonly, bitgen has determined and will use a specific value instead of the
+   generic command-line value of "Auto".  Alternately, this message appears if
+   the same option is specified multiple times on the command-line.  In this
+   case, the option listed last will be used.
+ERROR:Bitgen:157 - Bitgen will terminate because of the above errors.
+Summary of Bitgen Options:
++----------------------+----------------------+
+| Option Name          | Current Setting      |
++----------------------+----------------------+
+| Compress             | (Not Specified)*     |
++----------------------+----------------------+
+| Readback             | (Not Specified)*     |
++----------------------+----------------------+
+| CRC                  | Enable**             |
++----------------------+----------------------+
+| DebugBitstream       | No**                 |
++----------------------+----------------------+
+| ConfigRate           | 3**                  |
++----------------------+----------------------+
+| StartupClk           | Cclk**               |
++----------------------+----------------------+
+| CclkPin              | Pullup**             |
++----------------------+----------------------+
+| DonePin              | Pullup*              |
++----------------------+----------------------+
+| M0Pin                | Pullup**             |
++----------------------+----------------------+
+| M1Pin                | Pullup**             |
++----------------------+----------------------+
+| M2Pin                | Pullup**             |
++----------------------+----------------------+
+| ProgPin              | Pullup**             |
++----------------------+----------------------+
+| InitPin              | Pullup**             |
++----------------------+----------------------+
+| TckPin               | Pullup**             |
++----------------------+----------------------+
+| TdiPin               | Pullup**             |
++----------------------+----------------------+
+| TdoPin               | Pullup**             |
++----------------------+----------------------+
+| TmsPin               | Pullup**             |
++----------------------+----------------------+
+| UnusedPin            | Pulldown**           |
++----------------------+----------------------+
+| GWE_cycle            | 6**                  |
++----------------------+----------------------+
+| GTS_cycle            | 5**                  |
++----------------------+----------------------+
+| OverTempPowerDown    | Disable**            |
++----------------------+----------------------+
+| LCK_cycle            | NoWait*              |
++----------------------+----------------------+
+| Match_cycle          | NoWait               |
++----------------------+----------------------+
+| DONE_cycle           | 4**                  |
++----------------------+----------------------+
+| Persist              | No*                  |
++----------------------+----------------------+
+| DonePipe             | Yes**                |
++----------------------+----------------------+
+| Security             | None**               |
++----------------------+----------------------+
+| UserID               | 0xFFFFFFFF**         |
++----------------------+----------------------+
+| ActiveReconfig       | No*                  |
++----------------------+----------------------+
+| Encrypt              | No**                 |
++----------------------+----------------------+
+| EncryptKeySelect     | bbram*               |
++----------------------+----------------------+
+| Key0                 | pick*                |
++----------------------+----------------------+
+| StartCBC             | pick*                |
++----------------------+----------------------+
+| HKey                 | pick*                |
++----------------------+----------------------+
+| KeyFile              | (Not Specified)*     |
++----------------------+----------------------+
+| DCIUpdateMode        | AsRequired**         |
++----------------------+----------------------+
+| ICAP_Select          | Auto**               |
++----------------------+----------------------+
+| ConfigFallback       | Disable**            |
++----------------------+----------------------+
+| SelectMAPAbort       | Enable*              |
++----------------------+----------------------+
+| BPI_page_size        | 1**                  |
++----------------------+----------------------+
+| BPI_1st_read_cycle   | 1*                   |
++----------------------+----------------------+
+| next_config_addr     | None*                |
++----------------------+----------------------+
+| next_config_reboot   | Enable*              |
++----------------------+----------------------+
+| InitSignalsError     | Enable*              |
++----------------------+----------------------+
+| XADCPartialReconfig  | Disable*             |
++----------------------+----------------------+
+| XADCEnhancedLinearity | Off*                 |
++----------------------+----------------------+
+| JTAG_XADC            | Enable**             |
++----------------------+----------------------+
+| Disable_JTAG         | No**                 |
++----------------------+----------------------+
+| XADCPowerDown        | Disable*             |
++----------------------+----------------------+
+| Partial              | (Not Specified)*     |
++----------------------+----------------------+
+| ExtMasterCclk_en     | Disable**            |
++----------------------+----------------------+
+| BPI_sync_mode        | Disable**            |
++----------------------+----------------------+
+| SPI_32bit_addr       | No**                 |
++----------------------+----------------------+
+| SPI_buswidth         | 1**                  |
++----------------------+----------------------+
+| SPI_Fall_Edge        | No**                 |
++----------------------+----------------------+
+| RevisionSelect       | 00*                  |
++----------------------+----------------------+
+| RevisionSelect_tristate | Disable*             |
++----------------------+----------------------+
+| TIMER_CFG            | None*                |
++----------------------+----------------------+
+| TIMER_USR            | None*                |
++----------------------+----------------------+
+| USR_ACCESS           | None**               |
++----------------------+----------------------+
+| TimeStamp            | Default*             |
++----------------------+----------------------+
+| IEEE1532             | No*                  |
++----------------------+----------------------+
+| Binary               | No**                 |
++----------------------+----------------------+
+ *  Default setting.
+ ** The specified setting matches the default setting.
+
+There were 0 CONFIG constraint(s) processed from MIPS.pcf.
+
+
