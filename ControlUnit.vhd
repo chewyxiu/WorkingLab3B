@@ -31,7 +31,9 @@ entity ControlUnit is
 				ALUSrc 		: out  STD_LOGIC := '0';
 				SignExtend 	: out  STD_LOGIC := '0';
 				RegWrite		: out  STD_LOGIC := '0';	
-				RegDst		: out  STD_LOGIC:= '0');
+				RegDst		: out  STD_LOGIC:= '0';
+				LinkReg     : out  STD_LOGIC := '0');
+				
 end ControlUnit;
 
 
@@ -43,7 +45,7 @@ begin
 
 	case opcode is 
 	
-	--lw
+	--lw(i type)
 	when "100011" =>
 		ALUOp <= "00";
 		Branch <= '0';
@@ -56,9 +58,10 @@ begin
 		SignExtend <= '1';
 		RegWrite <= '1';
 		RegDst <= '0';
+		LinkReg <= '0';
 		
 		
-	--sw
+	--sw(i type)
 	when "101011" => 
 	
 		ALUOp <= "00";
@@ -72,8 +75,9 @@ begin
 		SignExtend <= '1';
 		RegWrite <= '0';
 		RegDst <= 'X';	
+		LinkReg <= '0';
 
-	--lui (upper immediate bits)
+	--lui (upper immediate bits) (i type)
 	when "001111" => 
 		ALUOp <= "00";
 		Branch <= '0';
@@ -85,9 +89,10 @@ begin
 		ALUSrc <= '1';
 		SignExtend <= '0';
 		RegWrite <= '1';
-		RegDst <= '0';	
+		RegDst <= '0';
+		LinkReg <= '0';		
 
-	--ori
+	--ori (i type)
 	when "001101" => 
 		ALUOp <= "00";
 		Branch <= '0';
@@ -100,8 +105,26 @@ begin
 		SignExtend <= '0';
 		RegWrite <= '1';
 		RegDst <= '0';
+		LinkReg <= '0';
+		
+		
+	-- addi(i type)
+	when "001000" => 
+		ALUOp <= "00";
+		Branch <= '0';
+		Jump <= '0';
+		MemRead <= '0';
+		MemToReg <= '0';
+		InstrtoReg <= '0';
+		MemWrite <= '0';
+		ALUSrc <= '1';
+		SignExtend <= '1';
+		RegWrite <= '1';
+		RegDst <= '0';
+		LinkReg <= '0';
 
-	--ADD,SUB, OR, NOR, SLT
+	--ADD,SUB, OR, NOR, SLT, SLTU,  MULT, MULTU, MFHI, MFLO ,
+	--AND, NOR, OR, ORI, SLL, SRA, SRL, SLLV, JR(R-type)
 	when "000000" =>
 		ALUOp <= "10";
 		Branch <= '0';
@@ -114,6 +137,7 @@ begin
 		SignExtend <= '0';
 		RegWrite <= '1';
 		RegDst <= '1';
+		LinkReg <= '0';
 	
 	--beq
 	when "000100" =>
@@ -128,6 +152,22 @@ begin
 		SignExtend <= '1';
 		RegWrite <= '0';
 		RegDst <= 'X';
+		LinkReg <= '0';
+		
+	-- bgez or bgezal
+	when "000001" => 
+		ALUOp <= "01";
+		Branch <= '1';
+		Jump <= '0';
+		MemRead <= '0';
+		MemToReg <= 'X';
+		InstrtoReg <= '0';
+		MemWrite <= '0';
+		ALUSrc <= '0';
+		SignExtend <= '1';
+		RegWrite <= '0';
+		RegDst <= 'X';
+		LinkReg <= '1';
 	
 	--j
 	when "000010" =>
@@ -142,7 +182,22 @@ begin
 		SignExtend <= '0';
 		RegWrite <= '0';
 		RegDst <= 'X';
-
+		LinkReg <= '0';
+		
+	--jal
+	when "000011" =>
+		ALUOp <= "XX";
+		Branch <= '0';
+		Jump <= '1';
+		MemRead <= '0';
+		MemToReg <= 'X';
+		InstrtoReg <= '0';
+		MemWrite <= '0';
+		ALUSrc <= 'X';
+		SignExtend <= '0';
+		RegWrite <= '0';
+		RegDst <= 'X';	
+		LinkReg <= '1';
 
 	when others =>
 		ALUOp <= "XX";
@@ -153,7 +208,7 @@ begin
 		InstrtoReg <= '0';
 		MemWrite <= '0';
 		ALUSrc <= 'X';
-		SignExtend <= 'X';
+		SignExtend <= '0';
 		RegWrite <= '0';
 		RegDst <= 'X';
 

@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.32 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.32 secs
  
 --> Reading design: TOP.prj
 
@@ -105,40 +105,43 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "C:\Users\User\Desktop\Computer-Architecure-Lab3\srl_shifter.vhd" into library work
+Parsing VHDL file "C:\Users\hp\Documents\GitHub\WorkingLab3B\srl_shifter.vhd" into library work
 Parsing entity <srl_shifter>.
 Parsing architecture <Behavioral> of entity <srl_shifter>.
-Parsing VHDL file "C:\Users\User\Desktop\Computer-Architecure-Lab3\sra_shifter.vhd" into library work
+Parsing VHDL file "C:\Users\hp\Documents\GitHub\WorkingLab3B\sra_shifter.vhd" into library work
 Parsing entity <sra_shifter>.
 Parsing architecture <Behavioral> of entity <sra_shifter>.
-Parsing VHDL file "C:\Users\User\Desktop\Computer-Architecure-Lab3\sll_shifter.vhd" into library work
+Parsing VHDL file "C:\Users\hp\Documents\GitHub\WorkingLab3B\sll_shifter.vhd" into library work
 Parsing entity <sll_shifter>.
 Parsing architecture <Behavioral> of entity <sll_shifter>.
-Parsing VHDL file "C:\Users\User\Desktop\Computer-Architecure-Lab3\Shift.vhd" into library work
+Parsing VHDL file "C:\Users\hp\Documents\GitHub\WorkingLab3B\Shift.vhd" into library work
 Parsing entity <Shift>.
 Parsing architecture <Behavioral> of entity <shift>.
-Parsing VHDL file "C:\Users\User\Desktop\Computer-Architecure-Lab3\ADDSUB.vhd" into library work
+Parsing VHDL file "C:\Users\hp\Documents\GitHub\WorkingLab3B\ADDSUB.vhd" into library work
 Parsing entity <ADDSUB>.
 Parsing architecture <ADDSUB_arch> of entity <addsub>.
-Parsing VHDL file "C:\Users\User\Desktop\Computer-Architecure-Lab3\RegFile.vhd" into library work
+Parsing VHDL file "C:\Users\hp\Documents\GitHub\WorkingLab3B\RegFile.vhd" into library work
 Parsing entity <RegFile>.
 Parsing architecture <arch_RegFile> of entity <regfile>.
-Parsing VHDL file "C:\Users\User\Desktop\Computer-Architecure-Lab3\PC.vhd" into library work
+Parsing VHDL file "C:\Users\hp\Documents\GitHub\WorkingLab3B\PC.vhd" into library work
 Parsing entity <PC>.
 Parsing architecture <arch_PC> of entity <pc>.
-Parsing VHDL file "C:\Users\User\Desktop\Computer-Architecure-Lab3\Lab3\SignExtend.vhd" into library work
+Parsing VHDL file "C:\Users\hp\Documents\GitHub\WorkingLab3B\Lab3\SignExtend.vhd" into library work
 Parsing entity <Sign_Extend>.
 Parsing architecture <Behavioral> of entity <sign_extend>.
-Parsing VHDL file "C:\Users\User\Desktop\Computer-Architecure-Lab3\ControlUnit.vhd" into library work
+Parsing VHDL file "C:\Users\hp\Documents\GitHub\WorkingLab3B\HILO_reg.vhd" into library work
+Parsing entity <HILO_reg>.
+Parsing architecture <Behavioral> of entity <hilo_reg>.
+Parsing VHDL file "C:\Users\hp\Documents\GitHub\WorkingLab3B\ControlUnit.vhd" into library work
 Parsing entity <ControlUnit>.
 Parsing architecture <arch_ControlUnit> of entity <controlunit>.
-Parsing VHDL file "C:\Users\User\Desktop\Computer-Architecure-Lab3\alumain.vhd" into library work
+Parsing VHDL file "C:\Users\hp\Documents\GitHub\WorkingLab3B\alumain.vhd" into library work
 Parsing entity <alu>.
 Parsing architecture <Behavioral> of entity <alu>.
-Parsing VHDL file "C:\Users\User\Desktop\Computer-Architecure-Lab3\MIPS.vhd" into library work
+Parsing VHDL file "C:\Users\hp\Documents\GitHub\WorkingLab3B\MIPS.vhd" into library work
 Parsing entity <MIPS>.
 Parsing architecture <arch_MIPS> of entity <mips>.
-Parsing VHDL file "C:\Users\User\Desktop\Computer-Architecure-Lab3\TOP.vhd" into library work
+Parsing VHDL file "C:\Users\hp\Documents\GitHub\WorkingLab3B\TOP.vhd" into library work
 Parsing entity <TOP>.
 Parsing architecture <arch_TOP> of entity <top>.
 
@@ -170,12 +173,17 @@ Elaborating entity <RegFile> (architecture <arch_RegFile>) from library <work>.
 
 Elaborating entity <Sign_Extend> (architecture <Behavioral>) from library <work>.
 
+Elaborating entity <HILO_reg> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:634 - "C:\Users\hp\Documents\GitHub\WorkingLab3B\MIPS.vhd" Line 175: Net <WriteHi_Reg[31]> does not have a driver.
+WARNING:HDLCompiler:634 - "C:\Users\hp\Documents\GitHub\WorkingLab3B\MIPS.vhd" Line 176: Net <WriteLo_Reg[31]> does not have a driver.
+WARNING:HDLCompiler:634 - "C:\Users\hp\Documents\GitHub\WorkingLab3B\MIPS.vhd" Line 177: Net <RegHiLoWrite> does not have a driver.
+
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <TOP>.
-    Related source file is "C:\Users\User\Desktop\Computer-Architecure-Lab3\TOP.vhd".
+    Related source file is "C:\Users\hp\Documents\GitHub\WorkingLab3B\TOP.vhd".
     Found 256x32-bit single-port RAM <Mram_DATA_MEM> for signal <DATA_MEM>.
     Found 1-bit register for signal <LED<6>>.
     Found 1-bit register for signal <LED<5>>.
@@ -200,18 +208,21 @@ Synthesizing Unit <TOP>.
 Unit <TOP> synthesized.
 
 Synthesizing Unit <MIPS>.
-    Related source file is "C:\Users\User\Desktop\Computer-Architecure-Lab3\MIPS.vhd".
-INFO:Xst:3210 - "C:\Users\User\Desktop\Computer-Architecure-Lab3\MIPS.vhd" line 204: Output port <Result2> of the instance <ALU1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\User\Desktop\Computer-Architecure-Lab3\MIPS.vhd" line 204: Output port <Status> of the instance <ALU1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\User\Desktop\Computer-Architecure-Lab3\MIPS.vhd" line 204: Output port <ALU_greater> of the instance <ALU1> is unconnected or connected to loadless signal.
-    Found 32-bit adder for signal <PC_out[31]_signExtendout[29]_add_64_OUT> created at line 348.
+    Related source file is "C:\Users\hp\Documents\GitHub\WorkingLab3B\MIPS.vhd".
+INFO:Xst:3210 - "C:\Users\hp\Documents\GitHub\WorkingLab3B\MIPS.vhd" line 205: Output port <Result2> of the instance <ALU1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\hp\Documents\GitHub\WorkingLab3B\MIPS.vhd" line 205: Output port <Status> of the instance <ALU1> is unconnected or connected to loadless signal.
+WARNING:Xst:653 - Signal <WriteHi_Reg> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <WriteLo_Reg> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <RegHiLoWrite> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 32-bit adder for signal <PC_out[31]_signExtendout[29]_add_67_OUT> created at line 378.
+    Found 32-bit adder for signal <PC_out[31]_GND_6_o_add_82_OUT> created at line 394.
     Summary:
-	inferred   1 Adder/Subtractor(s).
-	inferred  52 Multiplexer(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred  32 Multiplexer(s).
 Unit <MIPS> synthesized.
 
 Synthesizing Unit <PC>.
-    Related source file is "C:\Users\User\Desktop\Computer-Architecure-Lab3\PC.vhd".
+    Related source file is "C:\Users\hp\Documents\GitHub\WorkingLab3B\PC.vhd".
     Found 1-bit register for signal <PC_out<31>>.
     Found 1-bit register for signal <PC_out<30>>.
     Found 1-bit register for signal <PC_out<29>>.
@@ -251,7 +262,7 @@ Synthesizing Unit <PC>.
 Unit <PC> synthesized.
 
 Synthesizing Unit <alu>.
-    Related source file is "C:\Users\User\Desktop\Computer-Architecure-Lab3\alumain.vhd".
+    Related source file is "C:\Users\hp\Documents\GitHub\WorkingLab3B\alumain.vhd".
         width = 32
     Found 16-bit register for signal <MULTI_CYCLE_PROCESS.count>.
     Found 64-bit register for signal <MULTI_CYCLE_PROCESS.temp_sum>.
@@ -299,7 +310,7 @@ Synthesizing Unit <alu>.
 Unit <alu> synthesized.
 
 Synthesizing Unit <ADDSUB>.
-    Related source file is "C:\Users\User\Desktop\Computer-Architecure-Lab3\ADDSUB.vhd".
+    Related source file is "C:\Users\hp\Documents\GitHub\WorkingLab3B\ADDSUB.vhd".
         width = 32
     Found 33-bit adder for signal <n0020> created at line 58.
     Found 33-bit adder for signal <SUM_WIDER> created at line 58.
@@ -308,79 +319,97 @@ Synthesizing Unit <ADDSUB>.
 Unit <ADDSUB> synthesized.
 
 Synthesizing Unit <Shift>.
-    Related source file is "C:\Users\User\Desktop\Computer-Architecure-Lab3\Shift.vhd".
+    Related source file is "C:\Users\hp\Documents\GitHub\WorkingLab3B\Shift.vhd".
     Found 32-bit 4-to-1 multiplexer for signal <Result1> created at line 37.
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <Shift> synthesized.
 
 Synthesizing Unit <sll_shifter>.
-    Related source file is "C:\Users\User\Desktop\Computer-Architecure-Lab3\sll_shifter.vhd".
+    Related source file is "C:\Users\hp\Documents\GitHub\WorkingLab3B\sll_shifter.vhd".
     Summary:
 	inferred   6 Multiplexer(s).
 Unit <sll_shifter> synthesized.
 
 Synthesizing Unit <srl_shifter>.
-    Related source file is "C:\Users\User\Desktop\Computer-Architecure-Lab3\srl_shifter.vhd".
+    Related source file is "C:\Users\hp\Documents\GitHub\WorkingLab3B\srl_shifter.vhd".
     Summary:
 	inferred   6 Multiplexer(s).
 Unit <srl_shifter> synthesized.
 
 Synthesizing Unit <sra_shifter>.
-    Related source file is "C:\Users\User\Desktop\Computer-Architecure-Lab3\sra_shifter.vhd".
+    Related source file is "C:\Users\hp\Documents\GitHub\WorkingLab3B\sra_shifter.vhd".
     Summary:
 	inferred 186 Multiplexer(s).
 Unit <sra_shifter> synthesized.
 
 Synthesizing Unit <ControlUnit>.
-    Related source file is "C:\Users\User\Desktop\Computer-Architecure-Lab3\ControlUnit.vhd".
+    Related source file is "C:\Users\hp\Documents\GitHub\WorkingLab3B\ControlUnit.vhd".
+    Found 32x1-bit Read Only RAM for signal <Jump>
+    Found 4x2-bit Read Only RAM for signal <_n0020>
+    Found 64x10-bit Read Only RAM for signal <_n0085>
+WARNING:Xst:737 - Found 1-bit latch for signal <LinkReg>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
     Summary:
-	no macro.
+	inferred   3 RAM(s).
+	inferred   1 Latch(s).
 Unit <ControlUnit> synthesized.
 
 Synthesizing Unit <RegFile>.
-    Related source file is "C:\Users\User\Desktop\Computer-Architecure-Lab3\RegFile.vhd".
+    Related source file is "C:\Users\hp\Documents\GitHub\WorkingLab3B\RegFile.vhd".
     Found 32x32-bit dual-port RAM <Mram_registers> for signal <registers>.
     Summary:
 	inferred   2 RAM(s).
 Unit <RegFile> synthesized.
 
 Synthesizing Unit <Sign_Extend>.
-    Related source file is "C:\Users\User\Desktop\Computer-Architecure-Lab3\Lab3\SignExtend.vhd".
+    Related source file is "C:\Users\hp\Documents\GitHub\WorkingLab3B\Lab3\SignExtend.vhd".
     Summary:
 	no macro.
 Unit <Sign_Extend> synthesized.
+
+Synthesizing Unit <HILO_reg>.
+    Related source file is "C:\Users\hp\Documents\GitHub\WorkingLab3B\HILO_reg.vhd".
+    Found 32-bit register for signal <reg_Lo>.
+    Found 32-bit register for signal <reg_Hi>.
+    Summary:
+	inferred  64 D-type flip-flop(s).
+Unit <HILO_reg> synthesized.
 
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 4
+# RAMs                                                 : 7
  256x32-bit single-port RAM                            : 1
  256x32-bit single-port Read Only RAM                  : 1
+ 32x1-bit single-port Read Only RAM                    : 1
  32x32-bit dual-port RAM                               : 2
-# Adders/Subtractors                                   : 23
+ 4x2-bit single-port Read Only RAM                     : 1
+ 64x10-bit single-port Read Only RAM                   : 1
+# Adders/Subtractors                                   : 24
  16-bit adder                                          : 3
  26-bit adder                                          : 1
- 32-bit adder                                          : 15
+ 32-bit adder                                          : 16
  33-bit adder                                          : 2
  64-bit adder                                          : 2
-# Registers                                            : 60
+# Registers                                            : 62
  1-bit register                                        : 44
  16-bit register                                       : 2
  26-bit register                                       : 1
- 32-bit register                                       : 11
+ 32-bit register                                       : 13
  64-bit register                                       : 2
+# Latches                                              : 1
+ 1-bit latch                                           : 1
 # Comparators                                          : 3
  32-bit comparator greater                             : 1
  32-bit comparator lessequal                           : 2
-# Multiplexers                                         : 387
- 1-bit 2-to-1 multiplexer                              : 232
+# Multiplexers                                         : 367
+ 1-bit 2-to-1 multiplexer                              : 204
  16-bit 2-to-1 multiplexer                             : 13
  3-bit 2-to-1 multiplexer                              : 5
- 32-bit 2-to-1 multiplexer                             : 109
+ 32-bit 2-to-1 multiplexer                             : 115
  32-bit 4-to-1 multiplexer                             : 1
- 5-bit 2-to-1 multiplexer                              : 1
+ 5-bit 2-to-1 multiplexer                              : 3
  6-bit 2-to-1 multiplexer                              : 17
  64-bit 2-to-1 multiplexer                             : 9
 # Xors                                                 : 11
@@ -395,6 +424,70 @@ INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmet
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
+WARNING:Xst:1293 - FF/Latch <reg_Hi_0> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Hi_1> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Hi_2> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Hi_3> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Hi_4> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Hi_5> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Hi_6> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Hi_7> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Hi_8> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Hi_9> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Hi_10> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Hi_11> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Hi_12> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Hi_13> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Hi_14> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Hi_15> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Hi_16> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Hi_17> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Hi_18> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Hi_19> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Hi_20> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Hi_21> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Hi_22> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Hi_23> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Hi_24> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Hi_25> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Hi_26> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Hi_27> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Hi_28> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Hi_29> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Hi_30> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Hi_31> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Lo_0> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Lo_1> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Lo_2> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Lo_3> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Lo_4> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Lo_5> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Lo_6> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Lo_7> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Lo_8> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Lo_9> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Lo_10> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Lo_11> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Lo_12> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Lo_13> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Lo_14> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Lo_15> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Lo_16> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Lo_17> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Lo_18> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Lo_19> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Lo_20> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Lo_21> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Lo_22> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Lo_23> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Lo_24> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Lo_25> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Lo_26> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Lo_27> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Lo_28> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Lo_29> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Lo_30> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_Lo_31> has a constant value of 0 in block <HiLO_reg1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <MULTI_CYCLE_PROCESS.dividend_temp_0> of sequential type is unconnected in block <ALU1>.
 WARNING:Xst:2677 - Node <MULTI_CYCLE_PROCESS.dividend_temp_1> of sequential type is unconnected in block <ALU1>.
 WARNING:Xst:2677 - Node <MULTI_CYCLE_PROCESS.dividend_temp_2> of sequential type is unconnected in block <ALU1>.
@@ -457,6 +550,42 @@ WARNING:Xst:2677 - Node <MULTI_CYCLE_PROCESS.divisor_temp_27> of sequential type
 WARNING:Xst:2677 - Node <MULTI_CYCLE_PROCESS.divisor_temp_28> of sequential type is unconnected in block <ALU1>.
 WARNING:Xst:2677 - Node <MULTI_CYCLE_PROCESS.divisor_temp_29> of sequential type is unconnected in block <ALU1>.
 WARNING:Xst:2677 - Node <MULTI_CYCLE_PROCESS.divisor_temp_30> of sequential type is unconnected in block <ALU1>.
+
+Synthesizing (advanced) Unit <ControlUnit>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_Jump> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 32-word x 1-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <opcode<5:1>>   |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <Jump>          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0085> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 64-word x 10-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <opcode>        |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0020> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 4-word x 2-bit                      |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <(opcode<5>,opcode<3>)> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <ControlUnit> synthesized (advanced).
 
 Synthesizing (advanced) Unit <RegFile>.
 INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_registers> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
@@ -586,31 +715,34 @@ WARNING:Xst:2677 - Node <MULTI_CYCLE_PROCESS.divisor_temp_30> of sequential type
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 4
+# RAMs                                                 : 7
  256x32-bit single-port distributed RAM                : 1
  256x32-bit single-port distributed Read Only RAM      : 1
+ 32x1-bit single-port distributed Read Only RAM        : 1
  32x32-bit dual-port distributed RAM                   : 2
-# Adders/Subtractors                                   : 21
+ 4x2-bit single-port distributed Read Only RAM         : 1
+ 64x10-bit single-port distributed Read Only RAM       : 1
+# Adders/Subtractors                                   : 22
  16-bit adder                                          : 3
  26-bit adder                                          : 1
- 32-bit adder                                          : 13
+ 32-bit adder                                          : 14
  32-bit adder carry in                                 : 1
  33-bit adder carry in                                 : 1
  64-bit adder                                          : 2
 # Counters                                             : 1
  26-bit up counter                                     : 1
-# Registers                                            : 494
- Flip-Flops                                            : 494
+# Registers                                            : 558
+ Flip-Flops                                            : 558
 # Comparators                                          : 3
  32-bit comparator greater                             : 1
  32-bit comparator lessequal                           : 2
-# Multiplexers                                         : 450
- 1-bit 2-to-1 multiplexer                              : 296
+# Multiplexers                                         : 430
+ 1-bit 2-to-1 multiplexer                              : 268
  16-bit 2-to-1 multiplexer                             : 13
  3-bit 2-to-1 multiplexer                              : 5
- 32-bit 2-to-1 multiplexer                             : 109
+ 32-bit 2-to-1 multiplexer                             : 115
  32-bit 4-to-1 multiplexer                             : 1
- 5-bit 2-to-1 multiplexer                              : 1
+ 5-bit 2-to-1 multiplexer                              : 3
  6-bit 2-to-1 multiplexer                              : 17
  64-bit 2-to-1 multiplexer                             : 8
 # Xors                                                 : 11
@@ -623,6 +755,70 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+WARNING:Xst:1293 - FF/Latch <reg_Hi_0> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Hi_1> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Hi_2> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Hi_3> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Hi_4> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Hi_5> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Hi_6> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Hi_7> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Hi_8> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Hi_9> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Hi_10> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Hi_11> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Hi_12> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Hi_13> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Hi_14> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Hi_15> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Hi_16> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Hi_17> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Hi_18> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Hi_19> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Hi_20> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Hi_21> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Hi_22> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Hi_23> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Hi_24> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Hi_25> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Hi_26> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Hi_27> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Hi_28> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Hi_29> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Hi_30> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Hi_31> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Lo_0> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Lo_1> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Lo_2> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Lo_3> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Lo_4> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Lo_5> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Lo_6> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Lo_7> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Lo_8> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Lo_9> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Lo_10> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Lo_11> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Lo_12> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Lo_13> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Lo_14> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Lo_15> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Lo_16> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Lo_17> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Lo_18> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Lo_19> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Lo_20> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Lo_21> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Lo_22> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Lo_23> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Lo_24> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Lo_25> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Lo_26> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Lo_27> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Lo_28> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Lo_29> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Lo_30> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg_Lo_31> has a constant value of 0 in block <HILO_reg>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <TOP> ...
 
@@ -1121,24 +1317,25 @@ Top Level Output File Name         : TOP.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1178
+# BELS                             : 1313
 #      GND                         : 1
-#      INV                         : 2
-#      LUT1                        : 50
-#      LUT2                        : 29
-#      LUT3                        : 99
-#      LUT4                        : 56
-#      LUT5                        : 139
-#      LUT6                        : 511
-#      MUXCY                       : 161
-#      MUXF7                       : 10
+#      INV                         : 3
+#      LUT1                        : 80
+#      LUT2                        : 18
+#      LUT3                        : 49
+#      LUT4                        : 63
+#      LUT5                        : 210
+#      LUT6                        : 528
+#      MUXCY                       : 192
+#      MUXF7                       : 19
 #      VCC                         : 1
-#      XORCY                       : 119
-# FlipFlops/Latches                : 65
+#      XORCY                       : 149
+# FlipFlops/Latches                : 66
 #      FD                          : 27
 #      FDC                         : 29
 #      FDE                         : 8
 #      FDP                         : 1
+#      LD                          : 1
 # RAMS                             : 46
 #      RAM256X1S                   : 32
 #      RAM32M                      : 10
@@ -1157,18 +1354,18 @@ Selected Device : 7a100tcsg324-1
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              65  out of  126800     0%  
- Number of Slice LUTs:                 1062  out of  63400     1%  
-    Number used as Logic:               886  out of  63400     1%  
+ Number of Slice Registers:              66  out of  126800     0%  
+ Number of Slice LUTs:                 1127  out of  63400     1%  
+    Number used as Logic:               951  out of  63400     1%  
     Number used as Memory:              176  out of  19000     0%  
        Number used as RAM:              176
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1069
-   Number with an unused Flip Flop:    1004  out of   1069    93%  
-   Number with an unused LUT:             7  out of   1069     0%  
-   Number of fully used LUT-FF pairs:    58  out of   1069     5%  
-   Number of unique control sets:         3
+ Number of LUT Flip Flop pairs used:   1132
+   Number with an unused Flip Flop:    1066  out of   1132    94%  
+   Number with an unused LUT:             5  out of   1132     0%  
+   Number of fully used LUT-FF pairs:    61  out of   1132     5%  
+   Number of unique control sets:         4
 
 IO Utilization: 
  Number of IOs:                          34
@@ -1195,12 +1392,17 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------+------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)  | Load  |
------------------------------------+------------------------+-------+
-CLK_undiv                          | BUFGP                  | 27    |
-CLK                                | BUFG                   | 84    |
------------------------------------+------------------------+-------+
+----------------------------------------------------------------+------------------------------------+-------+
+Clock Signal                                                    | Clock buffer(FF name)              | Load  |
+----------------------------------------------------------------+------------------------------------+-------+
+CLK_undiv                                                       | BUFGP                              | 27    |
+CLK                                                             | BUFG                               | 84    |
+MIPS1/ControlUnit1/_n0085<9>(MIPS1_ControlUnit1/Mram__n008591:O)| NONE(*)(MIPS1/ControlUnit1/LinkReg)| 1     |
+----------------------------------------------------------------+------------------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -1210,9 +1412,9 @@ Timing Summary:
 ---------------
 Speed Grade: -1
 
-   Minimum period: 11.108ns (Maximum Frequency: 90.026MHz)
-   Minimum input arrival time before clock: 2.109ns
-   Maximum output required time after clock: 1.023ns
+   Minimum period: 12.187ns (Maximum Frequency: 82.051MHz)
+   Minimum input arrival time before clock: 2.969ns
+   Maximum output required time after clock: 1.028ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -1269,57 +1471,76 @@ Delay:               2.743ns (Levels of Logic = 27)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CLK'
-  Clock period: 11.108ns (frequency: 90.026MHz)
-  Total number of paths / destination ports: 400591829 / 562
+  Clock period: 12.187ns (frequency: 82.051MHz)
+  Total number of paths / destination ports: 1199374634 / 562
 -------------------------------------------------------------------------
-Delay:               11.108ns (Levels of Logic = 13)
-  Source:            MIPS1/PC1/PC_out_23 (FF)
-  Destination:       MIPS1/RegFile1/Mram_registers12 (RAM)
+Delay:               12.187ns (Levels of Logic = 30)
+  Source:            MIPS1/PC1/PC_out_8 (FF)
+  Destination:       Mram_DATA_MEM2 (RAM)
   Source Clock:      CLK rising
   Destination Clock: CLK rising
 
-  Data Path: MIPS1/PC1/PC_out_23 to MIPS1/RegFile1/Mram_registers12
+  Data Path: MIPS1/PC1/PC_out_8 to Mram_DATA_MEM2
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              3   0.478   0.953  MIPS1/PC1/PC_out_23 (MIPS1/PC1/PC_out_23)
-     LUT6:I0->O           63   0.124   0.935  Addr_Instr[31]_GND_5_o_equal_8_o<31>3 (Addr_Instr[31]_GND_5_o_equal_8_o<31>2)
-     LUT5:I1->O           19   0.124   0.518  Mmux_Instr131 (Instr<20>)
-     RAM32M:ADDRA4->DOA0    4   0.345   0.441  MIPS1/RegFile1/Mram_registers11 (Data_Out<0>)
-     LUT5:I4->O           94   0.124   0.702  MIPS1/Mmux_ALU_InB12 (MIPS1/ALU_InB<0>)
-     LUT6:I4->O            6   0.124   0.809  MIPS1/ALU1/Operand2<1>211 (MIPS1/ALU1/Operand2<1>_mmx_out28)
-     LUT6:I2->O            2   0.124   0.427  MIPS1/ALU1/Operand2<3>381 (MIPS1/ALU1/Operand2<3>_mmx_out42)
-     LUT5:I4->O            1   0.124   0.536  MIPS1/ALU1/Mmux_Result1182 (MIPS1/ALU1/Mmux_Result1181)
-     LUT6:I4->O            1   0.124   0.421  MIPS1/ALU1/Mmux_Result1185 (MIPS1/ALU1/Mmux_Result1185)
-     LUT6:I5->O            3   0.124   0.790  MIPS1/ALU1/Mmux_Result1187 (Addr_Data<11>)
-     LUT4:I0->O            1   0.124   0.421  MemRead_dec_DIP_AND_63_o16 (MemRead_dec_DIP_AND_63_o16)
-     LUT6:I5->O            2   0.124   0.427  MemRead_dec_DIP_AND_63_o17 (MemRead_dec_DIP_AND_63_o17)
-     LUT6:I5->O           32   0.124   0.689  MemRead_dec_DIP_AND_63_o2 (MemRead_dec_DIP_AND_63_o)
-     LUT6:I4->O            2   0.124   0.405  MIPS1/Mmux_WriteData_Reg210 (MIPS1/WriteData_Reg<10>)
-     RAM32M:DIC0               0.323          MIPS1/RegFile1/Mram_registers3
+     FDC:C->Q              8   0.478   0.762  MIPS1/PC1/PC_out_8 (MIPS1/PC1/PC_out_8)
+     LUT3:I0->O           11   0.124   0.487  Mram_Addr_Instr[9]_GND_5_o_wide_mux_8_OUT1211_SW0 (N0)
+     LUT6:I5->O            4   0.124   0.441  Mram_Addr_Instr[9]_GND_5_o_wide_mux_8_OUT5211 (Addr_Instr[9]_GND_5_o_wide_mux_8_OUT<26>)
+     LUT5:I4->O           10   0.124   0.978  Mmux_Instr191 (Instr<26>)
+     LUT5:I0->O           23   0.124   0.676  MIPS1_ControlUnit1/Mram__n0085111 (MIPS1/ALUOp<1>)
+     LUT6:I4->O            5   0.124   0.563  MIPS1/ALUOp[1]_Instr[5]_AND_47_o2 (MIPS1/ALUOp[1]_Instr[5]_AND_47_o2)
+     LUT6:I4->O           38   0.124   0.575  MIPS1/Mmux_Control31 (MIPS1/Mmux_Control3)
+     LUT5:I4->O          102   0.124   0.567  MIPS1/Mmux_Control32 (MIPS1/Control<2>)
+     MUXCY:CI->O           1   0.029   0.000  MIPS1/ALU1/ADDSUBer/Madd_SUM_WIDER_Madd_cy<0> (MIPS1/ALU1/ADDSUBer/Madd_SUM_WIDER_Madd_cy<0>)
+     MUXCY:CI->O           1   0.029   0.000  MIPS1/ALU1/ADDSUBer/Madd_SUM_WIDER_Madd_cy<1> (MIPS1/ALU1/ADDSUBer/Madd_SUM_WIDER_Madd_cy<1>)
+     MUXCY:CI->O           1   0.029   0.000  MIPS1/ALU1/ADDSUBer/Madd_SUM_WIDER_Madd_cy<2> (MIPS1/ALU1/ADDSUBer/Madd_SUM_WIDER_Madd_cy<2>)
+     MUXCY:CI->O           1   0.029   0.000  MIPS1/ALU1/ADDSUBer/Madd_SUM_WIDER_Madd_cy<3> (MIPS1/ALU1/ADDSUBer/Madd_SUM_WIDER_Madd_cy<3>)
+     MUXCY:CI->O           1   0.029   0.000  MIPS1/ALU1/ADDSUBer/Madd_SUM_WIDER_Madd_cy<4> (MIPS1/ALU1/ADDSUBer/Madd_SUM_WIDER_Madd_cy<4>)
+     MUXCY:CI->O           1   0.029   0.000  MIPS1/ALU1/ADDSUBer/Madd_SUM_WIDER_Madd_cy<5> (MIPS1/ALU1/ADDSUBer/Madd_SUM_WIDER_Madd_cy<5>)
+     MUXCY:CI->O           1   0.029   0.000  MIPS1/ALU1/ADDSUBer/Madd_SUM_WIDER_Madd_cy<6> (MIPS1/ALU1/ADDSUBer/Madd_SUM_WIDER_Madd_cy<6>)
+     MUXCY:CI->O           1   0.029   0.000  MIPS1/ALU1/ADDSUBer/Madd_SUM_WIDER_Madd_cy<7> (MIPS1/ALU1/ADDSUBer/Madd_SUM_WIDER_Madd_cy<7>)
+     MUXCY:CI->O           1   0.029   0.000  MIPS1/ALU1/ADDSUBer/Madd_SUM_WIDER_Madd_cy<8> (MIPS1/ALU1/ADDSUBer/Madd_SUM_WIDER_Madd_cy<8>)
+     MUXCY:CI->O           1   0.029   0.000  MIPS1/ALU1/ADDSUBer/Madd_SUM_WIDER_Madd_cy<9> (MIPS1/ALU1/ADDSUBer/Madd_SUM_WIDER_Madd_cy<9>)
+     MUXCY:CI->O           1   0.029   0.000  MIPS1/ALU1/ADDSUBer/Madd_SUM_WIDER_Madd_cy<10> (MIPS1/ALU1/ADDSUBer/Madd_SUM_WIDER_Madd_cy<10>)
+     MUXCY:CI->O           1   0.029   0.000  MIPS1/ALU1/ADDSUBer/Madd_SUM_WIDER_Madd_cy<11> (MIPS1/ALU1/ADDSUBer/Madd_SUM_WIDER_Madd_cy<11>)
+     MUXCY:CI->O           1   0.029   0.000  MIPS1/ALU1/ADDSUBer/Madd_SUM_WIDER_Madd_cy<12> (MIPS1/ALU1/ADDSUBer/Madd_SUM_WIDER_Madd_cy<12>)
+     MUXCY:CI->O           1   0.029   0.000  MIPS1/ALU1/ADDSUBer/Madd_SUM_WIDER_Madd_cy<13> (MIPS1/ALU1/ADDSUBer/Madd_SUM_WIDER_Madd_cy<13>)
+     MUXCY:CI->O           1   0.029   0.000  MIPS1/ALU1/ADDSUBer/Madd_SUM_WIDER_Madd_cy<14> (MIPS1/ALU1/ADDSUBer/Madd_SUM_WIDER_Madd_cy<14>)
+     MUXCY:CI->O           1   0.029   0.000  MIPS1/ALU1/ADDSUBer/Madd_SUM_WIDER_Madd_cy<15> (MIPS1/ALU1/ADDSUBer/Madd_SUM_WIDER_Madd_cy<15>)
+     MUXCY:CI->O           1   0.029   0.000  MIPS1/ALU1/ADDSUBer/Madd_SUM_WIDER_Madd_cy<16> (MIPS1/ALU1/ADDSUBer/Madd_SUM_WIDER_Madd_cy<16>)
+     XORCY:CI->O           1   0.510   0.536  MIPS1/ALU1/ADDSUBer/Madd_SUM_WIDER_Madd_xor<17> (MIPS1/ALU1/SUM<17>)
+     LUT6:I4->O            6   0.124   0.972  MIPS1/ALU1/Mmux_Result1546 (Addr_Data<17>)
+     LUT6:I0->O            2   0.124   0.542  GND_5_o_Addr_Data[31]_LessThan_1_o21 (GND_5_o_Addr_Data[31]_LessThan_1_o2)
+     LUT6:I4->O            1   0.124   0.421  GND_5_o_Addr_Data[31]_LessThan_1_o23_1 (GND_5_o_Addr_Data[31]_LessThan_1_o23)
+     LUT2:I1->O            1   0.124   0.000  MemWrite_dec_DATA_MEM_AND_64_o1_lut (MemWrite_dec_DATA_MEM_AND_64_o1_lut)
+     MUXCY:S->O           32   0.777   0.552  MemWrite_dec_DATA_MEM_AND_64_o1_cy (MemWrite_dec_DATA_MEM_AND_64_o)
+     RAM256X1S:WE              0.490          Mram_DATA_MEM2
     ----------------------------------------
-    Total                     11.108ns (2.634ns logic, 8.474ns route)
-                                       (23.7% logic, 76.3% route)
+    Total                     12.187ns (4.116ns logic, 8.071ns route)
+                                       (33.8% logic, 66.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK'
-  Total number of paths / destination ports: 62 / 62
+  Total number of paths / destination ports: 66 / 62
 -------------------------------------------------------------------------
-Offset:              2.109ns (Levels of Logic = 2)
-  Source:            RESET (PAD)
-  Destination:       MIPS1/PC1/PC_out_2 (FF)
+Offset:              2.969ns (Levels of Logic = 4)
+  Source:            DIP<0> (PAD)
+  Destination:       MIPS1/RegFile1/Mram_registers1 (RAM)
   Destination Clock: CLK rising
 
-  Data Path: RESET to MIPS1/PC1/PC_out_2
+  Data Path: DIP<0> to MIPS1/RegFile1/Mram_registers1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   0.001   0.939  RESET_IBUF (RESET_IBUF)
-     LUT6:I0->O           30   0.124   0.551  MIPS1/PC1/RESET_PC_in[31]_OR_32_o8 (MIPS1/PC1/RESET_PC_in[31]_OR_32_o)
-     FDC:CLR                   0.494          MIPS1/PC1/PC_out_30
+     IBUF:I->O             2   0.001   0.542  DIP_0_IBUF (DIP_0_IBUF)
+     LUT2:I0->O            1   0.124   0.919  MIPS1/Mmux_WriteData_Reg1_SW0 (N8)
+     LUT6:I1->O            1   0.124   0.421  MIPS1/Mmux_WriteData_Reg1_SW3 (N234)
+     LUT6:I5->O            2   0.124   0.405  MIPS1/Mmux_WriteData_Reg1 (MIPS1/WriteData_Reg<0>)
+     RAM32M:DIA0               0.309          MIPS1/RegFile1/Mram_registers11
     ----------------------------------------
-    Total                      2.109ns (0.619ns logic, 1.490ns route)
-                                       (29.3% logic, 70.7% route)
+    Total                      2.969ns (0.682ns logic, 2.287ns route)
+                                       (23.0% logic, 77.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK_undiv'
@@ -1344,7 +1565,7 @@ Offset:              0.877ns (Levels of Logic = 1)
 Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK'
   Total number of paths / destination ports: 15 / 15
 -------------------------------------------------------------------------
-Offset:              1.023ns (Levels of Logic = 1)
+Offset:              1.028ns (Levels of Logic = 1)
   Source:            MIPS1/PC1/PC_out_7 (FF)
   Destination:       LED<13> (PAD)
   Source Clock:      CLK rising
@@ -1353,11 +1574,11 @@ Offset:              1.023ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             24   0.478   0.545  MIPS1/PC1/PC_out_7 (MIPS1/PC1/PC_out_7)
+     FDC:C->Q             26   0.478   0.550  MIPS1/PC1/PC_out_7 (MIPS1/PC1/PC_out_7)
      OBUF:I->O                 0.000          LED_13_OBUF (LED<13>)
     ----------------------------------------
-    Total                      1.023ns (0.478ns logic, 0.545ns route)
-                                       (46.7% logic, 53.3% route)
+    Total                      1.028ns (0.478ns logic, 0.550ns route)
+                                       (46.5% logic, 53.5% route)
 
 =========================================================================
 
@@ -1365,12 +1586,13 @@ Cross Clock Domains Report:
 --------------------------
 
 Clock to Setup on destination clock CLK
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-CLK            |   11.108|         |         |         |
----------------+---------+---------+---------+---------+
+----------------------------+---------+---------+---------+---------+
+                            | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------------+---------+---------+---------+---------+
+CLK                         |   12.187|         |         |         |
+MIPS1/ControlUnit1/_n0085<9>|         |    4.799|         |         |
+----------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock CLK_undiv
 ---------------+---------+---------+---------+---------+
@@ -1380,17 +1602,25 @@ Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 CLK_undiv      |    2.743|         |         |         |
 ---------------+---------+---------+---------+---------+
 
+Clock to Setup on destination clock MIPS1/ControlUnit1/_n0085<9>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLK            |         |         |    3.542|         |
+---------------+---------+---------+---------+---------+
+
 =========================================================================
 
 
-Total REAL time to Xst completion: 27.00 secs
-Total CPU time to Xst completion: 26.78 secs
+Total REAL time to Xst completion: 60.00 secs
+Total CPU time to Xst completion: 60.25 secs
  
 --> 
 
-Total memory usage is 461552 kilobytes
+Total memory usage is 493904 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  579 (   0 filtered)
-Number of infos    :    8 (   0 filtered)
+Number of warnings :  714 (   0 filtered)
+Number of infos    :   11 (   0 filtered)
 
