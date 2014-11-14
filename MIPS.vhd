@@ -384,14 +384,14 @@ PC_out; -- R-type / Lw/ Sw
 --RegFile
 WriteAddr_Reg <= 
 "11111" when LinkReg = '1' and Instr(31 downto 26) = "000011"  else -- JAL
-"11111" when LinkReg = '1' and Instr(20 downto 16) = "10001"  else -- BGEZAL	
+"11111" when LinkReg = '1' and Instr(20 downto 16) = "10001" and ALU_greater = '1'   else -- BGEZAL	
 Instr(20 downto 16) when RegDst = '0' else -- choose rt or rd
 Instr(15 downto 11);
 
 WriteData_Reg <= Result1 when MemtoReg = '0' else -- choose rt or rd
 --Instr(15 downto 0)& x"0000" when InstrtoReg = '1' else -- LUI
 (PC_out+4) when LinkReg = '1' and Instr(31 downto 26) = "000011" else  -- JAL
-(PC_out+4) when LinkReg = '1' and Instr(20 downto 16) = "10001"  else -- BGEZAL												
+(PC_out+4) when LinkReg = '1' and Instr(20 downto 16) = "10001"  and ALU_greater = '1'  else -- BGEZAL												
 ReadHi_Reg when (Control(5 downto 0) = "010000") else --MFHI
 ReadLo_Reg when (Control(5 downto 0) = "010010") else --MFLO 
 DATA_In; 

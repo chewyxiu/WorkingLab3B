@@ -166,12 +166,11 @@ BEGIN
 --		wait for CLK_period*10;
 --		
 
-      --    x"000b5180", -- 			sll $t2, $t3, 0x0006
-		Instr <= "00000000000010110101000110000000"; -- op = x08, rt = 18, rs = 20, imm = 7
+     --x"000a5282", -- 			srl $t2, $t2, 0x000a
+		Instr <= "00000000000010100101001010000010"; 
 		Data_in <= (others => '0');
 		wait for CLK_period*10;
-
-
+		
 		
       wait;
    end process;
