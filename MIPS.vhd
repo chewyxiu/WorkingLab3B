@@ -49,29 +49,6 @@ component PC is
 end component;
 
 
-
-
-----------------------------------------------------------------
--- ALU  WRAPPER
-----------------------------------------------------------------
---component ALU_Wrapper is
---	Port(	
---		     Clk : in STD_LOGIC;
---			  ALU_InA : in  STD_LOGIC_VECTOR(31 downto 0);
---           ALU_InB : in  STD_LOGIC_VECTOR(31 downto 0);
---           Control : in  STD_LOGIC(7 downto 0);
---			  Result1 : out  STD_LOGIC (31 downto 0);
---           Result2 : out STD_LOGIC (31 downto 0);
---           Operand1 : out  STD_LOGIC_VECTOR(31 downto 0);
---           Operand2 : out  STD_LOGIC_VECTOR(31 downto 0);
---           Status	 : out  STD_LOGIC(2 downto 0);
---			  ALU_zero		: out STD_LOGIC;
---			  ALU_greater	: out STD_LOGIC;
---	   )
---end component;
-
---end component;
-
 component alu is
 generic (width 	: integer);
 Port (Clk			: in	STD_LOGIC;
@@ -332,17 +309,39 @@ Control <=  "001010" when ALUOp = "00" and Instr(31 downto 26) = "001101" else -
 				"100011" when ALUOp = "10" and Instr(5 downto 0) = "011011" else	-- divu
 				"XXXXXX"; -- j
 
---Unconditional
-ALU_InA  <= ReadData1_Reg;
+--Unconditional(old working code 
+--ALU_InA  <= ReadData1_Reg;
+--
+----for R type and BEQ operations 
+--ALU_InB <= ReadData2_Reg when ALUSrc = '0' else
+----ALUSrc = 1 
+--Instr(15 downto 0)& x"0000" when InstrtoReg = '1' else -- LUI
+----x"0000" & Instr(15 downto 0) when ALUOp = "11" and InstrtoReg = '0' else --ORI
+--x"0000" & Instr(15 downto 0) when SignExtend = '0' else -- ORI
+--signExtendout; -- LW/SW
 
---for R type and BEQ operations 
 
-ALU_InB <= ReadData2_Reg when ALUSrc = '0' else
---ALUSrc = 1 
+ALU_InA  <= ReadData2_Reg when Instr(5 downto 3) ="000" and ALUOp = "10" else --sll,sllv,sra,srl
+ReadData1_Reg;
+
+ALU_InB <= x"000000" &"000" & Instr(10 downto 6) when Instr(5 downto 2)= "0000" and ALUOp = "10" else --sll, sra,srl
+           ReadData1_Reg when Control(5 downto 0) = "000100" else --sllv
+ReadData2_Reg when ALUSrc = '0' else  --remaining r-type instructions and BEQ
 Instr(15 downto 0)& x"0000" when InstrtoReg = '1' else -- LUI
 --x"0000" & Instr(15 downto 0) when ALUOp = "11" and InstrtoReg = '0' else --ORI
 x"0000" & Instr(15 downto 0) when SignExtend = '0' else -- ORI
-signExtendout; -- LW/SW
+signExtendout; -- LW/SW/SLTI?/ADDI (15 downto 0)-offset
+
+
+
+
+
+
+
+
+
+
+
 
 --PC
 PC_in <= PC_out + (signExtendout(29 downto 0) & "00")  when Branch = '1' and ALU_zero = '1' else -- Branch (beq) 
