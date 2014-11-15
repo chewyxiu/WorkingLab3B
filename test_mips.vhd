@@ -191,7 +191,6 @@ BEGIN
 --		Data_in <= (others => '0');
 --		wait for CLK_period*10;
 
-
 		
       wait;
    end process;
