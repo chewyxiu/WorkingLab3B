@@ -67,7 +67,7 @@ end component;
 ----------------------------------------------------------------
 component ControlUnit is
     Port ( 	
-			opcode 		: in   STD_LOGIC_VECTOR (5 downto 0);
+			Control_Instr 		: in   STD_LOGIC_VECTOR (31 downto 0);
 			ALUOp 		: out  STD_LOGIC_VECTOR (1 downto 0);
 			Branch 		: out  STD_LOGIC;
 			Jump	 		: out  STD_LOGIC;				
@@ -79,6 +79,13 @@ component ControlUnit is
 			SignExtend 	: out  STD_LOGIC; -- false for ORI 
 			RegWrite		: out  STD_LOGIC;	
 			RegDst		: out  STD_LOGIC;
+			Data_InA		: out  STD_LOGIC:= '0';
+			Shift_Amt	: out  STD_LOGIC:= '0';
+			Shift_Reg	: out  STD_LOGIC:= '0';
+			JumptoReg	: out  STD_LOGIC:= '0';
+			Hi_Reg 		: out  STD_LOGIC:= '0';
+			Lo_Reg 		: out  STD_LOGIC:= '0';
+			Write_HiLo	: out  STD_LOGIC:= '0';
 			LinkReg     : out  STD_LOGIC);
 end component;
 
@@ -139,7 +146,7 @@ end component;
 ----------------------------------------------------------------
 -- Control Unit Signals
 ----------------------------------------------------------------				
- 	signal	opcode 		:  STD_LOGIC_VECTOR (5 downto 0);
+ 	signal	opcode 		:  STD_LOGIC_VECTOR (31 downto 0);
 	signal	ALUOp 		:  STD_LOGIC_VECTOR (1 downto 0);
 	signal	Branch 		:  STD_LOGIC;
 	signal	Jump	 		:  STD_LOGIC;	
@@ -150,7 +157,13 @@ end component;
 	signal	RegWrite		: 	STD_LOGIC;	
 	signal	RegDst		:  STD_LOGIC;
 	signal   LinkReg     :  STD_LOGIC;
-
+	signal	Data_InA		:  STD_LOGIC:= '0';
+	signal	Shift_Amt	:  STD_LOGIC:= '0';
+	signal	Shift_Reg	:  STD_LOGIC:= '0';
+	signal	JumptoReg	:  STD_LOGIC:= '0';
+	signal	Hi_Reg 		:  STD_LOGIC:= '0';
+	signal	Lo_Reg 		:  STD_LOGIC:= '0';
+	signal	Write_HiLo	:  STD_LOGIC:= '0';
 ----------------------------------------------------------------
 -- Register File Signals
 ----------------------------------------------------------------
@@ -218,11 +231,11 @@ ALU1		: ALU
 						);
 					
 ----------------------------------------------------------------
--- PC port map
+-- Control Unit port map
 ----------------------------------------------------------------
 ControlUnit1 	: ControlUnit port map
 						(
-						opcode 		=> opcode, 
+						Control_Instr 		=> opcode, 
 						ALUOp 		=> ALUOp, 
 						Branch 		=> Branch, 
 						Jump 			=> Jump, 
@@ -234,6 +247,13 @@ ControlUnit1 	: ControlUnit port map
 						SignExtend 	=> SignExtend, 
 						RegWrite 	=> RegWrite, 
 						RegDst 		=> RegDst,
+						Data_InA	=> Data_InA,
+						Shift_Amt	=> Shift_Amt,
+						Shift_Reg	=> Shift_Reg,
+						JumptoReg	=> JumptoReg,
+						Hi_Reg 		=> Hi_Reg,
+						Lo_Reg 		=> Lo_Reg,
+						Write_HiLo	=> Write_HiLo,
 						LinkReg     => LinkReg
 						);
 						
@@ -282,7 +302,9 @@ HiLO_reg1 :		HILO_reg port map
 --Fetching of instructions accounted for by PC1
 
 --Decoding instructions for Control Unit
-opcode <= Instr(31 downto 26);
+opcode <= Instr;
+
+--Reading register values
 ReadAddr1_Reg <= Instr(25 downto 21); 
 ReadAddr2_Reg <= Instr(20 downto 16);
 
@@ -291,39 +313,8 @@ ReadAddr2_Reg <= Instr(20 downto 16);
 --for load and store operations
 signExtendin <= Instr(15 downto 0);
 
---case Control(7 downto 6) is --ALU_Op
---when "00" => ALU_control <= Control(5 downto 0); --lw/sw
---when "01" => ALU_control <= Control(5 downto 0); --beq
---when "10" =>
---	case Control(5 downto 0) is --funct
---	when "100000" => ALU_control <= Control(5) & "00010" ; --add
---	when "100010" => ALU_control <= Control(5) & "00110" ; --sub
---	when "100100" => ALU_control <= Control(5) & "00000" ; --and
---	when "100101" => ALU_control <= Control(5) & "00001" ; --or
---	when "100110" => ALU_control <= Control(5) & "00111" ; --slt
---	when "100111" => ALU_control <= Control(5) & "01100" ; --nor
---	when others =>
---	
---	end case;
---when others =>
---
---end case;
-
---ALU_Control <= ALUOp & Instr(5 downto 0);
-
---Control <= --Instr(5) & "XXXX" when ALUOp = "11" and Instr(31 downto 26) = "001101" else --ori
-----Instr(5) & "XXXXX" when ALUOp = "11" and Instr(31 downto 26) = "001111" else --lui
---Instr(5 downto 0) when ALUOp = "11" and Instr(31 downto 26) = "001101" else --ori
---Instr(5 downto 0) when ALUOp = "11" and Instr(31 downto 26) = "001111" else --lui
---Instr(5 downto 0) when ALUOp = "00" else --lw/sw
---Instr(5) & "00100" when ALUOp = "01" and Instr(31 downto 26) = "000100" else --beq
---Instr(5) & "00011" when ALUOp = "01" and Instr(31 downto 26) = "000001" else --bgez/bgezal
-----Instr(5) & "XXXXX" when ALUOp = "01" else 
---Instr(5 downto 0) when ALUOp = "10"  else --R type
---Instr(5 downto 0);
 
 Control <=  "001010" when ALUOp = "00" and Instr(31 downto 26) = "001101" else --ori
-				--"XXXXXX" when ALUOp = "00" and Instr(31 downto 26) = "001111" else --lui
 				"000010" when ALUOp = "00" else -- add when lw, sw, addi
 				--Branch
 				"000100" when ALUOp = "01" and Instr(31 downto 26) = "000100" else --beq
@@ -342,8 +333,6 @@ Control <=  "001010" when ALUOp = "00" and Instr(31 downto 26) = "001101" else -
 				"001001" when (Instr(5 downto 0) = "000011" or Instr(5 downto 0) = "000111") else	-- sra, srav
 				"100000" when ALUOp = "10" and Instr(5 downto 0) = "011000" else	-- mult
 				"100001" when ALUOp = "10" and Instr(5 downto 0) = "011001" else	-- multu
-				"100010" when ALUOp = "10" and Instr(5 downto 0) = "011010" else	-- div
-				"100011" when ALUOp = "10" and Instr(5 downto 0) = "011011" else	-- divu
 				"XXXXXX"; -- j
 
 ----Unconditional(old working code)
@@ -358,51 +347,47 @@ Control <=  "001010" when ALUOp = "00" and Instr(31 downto 26) = "001101" else -
 --signExtendout; -- LW/SW
 
 
-ALU_InA  <= 
-ReadData2_Reg when Instr(5 downto 3) ="000" and ALUOp = "10" else --sll,sllv,sra,srl
+ALU_InA  <= ReadData2_Reg when Data_InA = '1' else --sll,sllv,sra,srl
 ReadData1_Reg;
 
-ALU_InB <= 
-x"000000" &"000" & Instr(10 downto 6) when Instr(5 downto 2)= "0000" and ALUOp = "10" else --sll, sra,srl
-ReadData1_Reg when Control(5 downto 0) = "000100" else --sllv
+ALU_InB <= Instr when Shift_Amt = '1' else --sll, sra,srl
+ReadData1_Reg when Shift_Reg = '1' else --sllv
 ReadData2_Reg when ALUSrc = '0' else  --remaining r-type instructions and BEQ
-Instr(15 downto 0)& x"0000" when InstrtoReg = '1' else -- LUI
-x"0000" & Instr(15 downto 0) when ALUOp = "11" and InstrtoReg = '0' else --ORI
 x"0000" & Instr(15 downto 0) when SignExtend = '0' else -- ORI
-signExtendout; -- LW/SW/SLTI?/ADDI (15 downto 0)-offset
-
+signExtendout; -- LW/SW/SLTI/ADDI (15 downto 0)-offset
 
 --PC
-PC_in <= 
-PC_out + (signExtendout(29 downto 0) & "00")  when Branch = '1' and ALU_zero = '1' else -- Branch (beq) 
+PC_in <= PC_out + (signExtendout(29 downto 0) & "00")  when Branch = '1' and ALU_zero = '1' else -- Branch (beq) 
 PC_out + (signExtendout(29 downto 0) & "00")  when ((Branch = '1')and (ALU_greater = '1')) else -- Branch (bgez/bgezal)
 PC_out(31 downto 28) &(Instr(25 downto 0)& "00") when Jump = '1' else --Jump(J)/ JAL
-ReadData1_Reg when ((Jump = '1') and (Control(5 downto 0) = "001000")) else --JR
+ReadData1_Reg when JumptoReg = '1' else --JR
 PC_out; -- R-type / Lw/ Sw
 
 
 --RegFile
-WriteAddr_Reg <= 
-"11111" when LinkReg = '1' and Instr(31 downto 26) = "000011"  else -- JAL
-"11111" when LinkReg = '1' and Instr(20 downto 16) = "10001"  else -- BGEZAL	
+WriteAddr_Reg <= "11111" when LinkReg = '1' and Jump = '1'else -- JAL
+"11111" when LinkReg = '1' and ALU_greater = '1' else -- BGEZAL	
 Instr(20 downto 16) when RegDst = '0' else -- choose rt or rd
 Instr(15 downto 11);
 
 WriteData_Reg <= Result1 when MemtoReg = '0' else -- choose rt or rd
---Instr(15 downto 0)& x"0000" when InstrtoReg = '1' else -- LUI
-(PC_out+4) when LinkReg = '1' and Instr(31 downto 26) = "000011" else  -- JAL
-(PC_out+4) when LinkReg = '1' and Instr(20 downto 16) = "10001"  else -- BGEZAL												
-ReadHi_Reg when (Control(5 downto 0) = "010000") else --MFHI
-ReadLo_Reg when (Control(5 downto 0) = "010010") else --MFLO 
+Instr(15 downto 0)& x"0000" when InstrtoReg = '1' else -- LUI
+(PC_out+4) when LinkReg = '1' and Jump = '1' else  -- JAL
+(PC_out+4) when LinkReg = '1' and ALU_greater = '1' else -- BGEZAL												
+ReadHi_Reg when Hi_Reg = '1' else --MFHI
+ReadLo_Reg when Lo_Reg = '1' else --MFLO 
 DATA_In; 
 
+--HiLo 
+WriteHi_Reg<= Result2; 
+WriteLo_Reg<= Result1;
+RegHiLoWrite<= Write_HiLo;
 
 --Output to top file
 Addr_Instr <= PC_out;
 Addr_Data <= Result1;
 Data_Out <= ReadData2_Reg;
  
-
 
 end arch_MIPS;
 

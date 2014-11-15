@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=C:\Users\hp\Documents\GitHub\WorkingLab3B\Lab3\TOP.ncd
-OUTFILE=C:\Users\hp\Documents\GitHub\WorkingLab3B\Lab3\TOP.bit
+INFILE=C:\Users\User\Documents\GitHub\WorkingLab3B\Lab3\TOP.ncd
+OUTFILE=C:\Users\User\Documents\GitHub\WorkingLab3B\Lab3\TOP.bit
 FAMILY=Artix7
 PART=xc7a100t-1csg324
-WORKINGDIR=C:\Users\hp\Documents\GitHub\WorkingLab3B\Lab3
+WORKINGDIR=C:\Users\User\Documents\GitHub\WorkingLab3B\Lab3
 LICENSE=WebPack
-USER_INFO=210798014_0_0_562
+USER_INFO=210797540_0_0_822

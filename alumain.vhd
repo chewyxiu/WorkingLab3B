@@ -360,176 +360,176 @@ begin
 
 when "10011"  =>  --DIVU 
 				
-				--first loop
-				if state = COMBINATIONAL then  -- n_state = MULTI_CYCLE and state = COMBINATIONAL implies we are just transitioning into MULTI_CYCLE
-				
-					if Operand2 = x"00000000" then -- divisor is zero
-						Result1_multi <= (others => 'X');
-						Result2_multi <= (others => 'X');
-						done <= '1';	
-					
-					elsif Operand1 = x"00000000" and Operand2 /= x"00000000" then --dividend is zero 
-						Result1_multi <= (others => '0');
-						Result2_multi <= (others => '0');
-						done <= '1';
-						
-					elsif Operand1 < Operand2 then 
-						Result1_multi <= (others => '0');
-						Result2_multi <= Operand1;
-						done <= '1';		
-					
-					else
-						temp_operand1(width-1 downto 0) := Operand1(width-1 downto 0);
-						temp_operand2(width-1 downto 0) := Operand2(width-1 downto 0);	
-					
-						div_count := (others => '0');
-						quotient  := (others => '0'); 
-						remainder:= (others => '0'); 
-						dividend:= (others => '0');
-						divisor  := (others => '0');
-						div_MSB := (others => '0');
-						temp_div_MSB := (others => '0'); --A = 0
-						
-					end if;
+--				--first loop
+--				if state = COMBINATIONAL then  -- n_state = MULTI_CYCLE and state = COMBINATIONAL implies we are just transitioning into MULTI_CYCLE
+--				
+--					if Operand2 = x"00000000" then -- divisor is zero
+--						Result1_multi <= (others => 'X');
+--						Result2_multi <= (others => 'X');
+--						done <= '1';	
+--					
+--					elsif Operand1 = x"00000000" and Operand2 /= x"00000000" then --dividend is zero 
+--						Result1_multi <= (others => '0');
+--						Result2_multi <= (others => '0');
+--						done <= '1';
+--						
+--					elsif Operand1 < Operand2 then 
+--						Result1_multi <= (others => '0');
+--						Result2_multi <= Operand1;
+--						done <= '1';		
+--					
+--					else
+--						temp_operand1(width-1 downto 0) := Operand1(width-1 downto 0);
+--						temp_operand2(width-1 downto 0) := Operand2(width-1 downto 0);	
+--					
+--						div_count := (others => '0');
+--						quotient  := (others => '0'); 
+--						remainder:= (others => '0'); 
+--						dividend:= (others => '0');
+--						divisor  := (others => '0');
+--						div_MSB := (others => '0');
+--						temp_div_MSB := (others => '0'); --A = 0
+--						
+--					end if;
 		
-				end if;	
-				
-				
-				if  (not(Operand2 = x"00000000" or (Operand1 = x"00000000" and Operand2 /= x"00000000"))) then 
-					
-					if Operand1 >= Operand2 then 
-
-						--if temp_div_MSB <0 then 
-						if temp_div_MSB(width-1) = '1' then 
-						
-							--shift left A, Q 
-							temp_div_MSB := temp_div_MSB(width-2 downto 0)&temp_operand1(width-1);
-							temp_operand1 := temp_operand1(width-2 downto 0)&'0'; --put 0 first
-			
-							-- A = A + M
-							temp_div_MSB := temp_div_MSB + temp_operand2;
-				
-						else
-							--shift left A, Q
-							temp_div_MSB := temp_div_MSB(width-2 downto 0)&temp_operand1(width-1);
-							temp_operand1 := temp_operand1(width-2 downto 0)&'0'; --put 0 first
-					
-							--A = A - M
-							temp_div_MSB := temp_div_MSB + (not(temp_operand2) + 1); 	
-						end if;			
-				
-						--if temp_div_MSB <0 then 
-						if temp_div_MSB(width-1) = '1' then 
-							temp_operand1(0) := '0';
-						else
-							temp_operand1(0) := '1';
-						end if;
-						
-					end if;
-					
-				end if;
-				
-				div_count := div_count+1;	
-					
-				
-				if div_count = X"20" then --33rd cycle 
-					--if temp_div_MSB <0 then 
-					if temp_div_MSB(width-1) = '1' then 
-						--A = A+M
-						temp_div_MSB := temp_div_MSB + temp_operand2;
-					end if;
-					
-					
-					
-					remainder := temp_div_MSB;
-					quotient := temp_operand1;
-			
-					Result1_multi <= quotient;
-					Result2_multi <= remainder;		
-					
-					quotient  := (others => '0'); 
-					remainder:= (others => '0'); 
-					dividend:= (others => '0');
-					divisor  := (others => '0');
-					div_count := (others => '0');
-					div_MSB := (others => '0');
-					temp_div_MSB := (others => '0');
-					temp_operand1 := (others => '0');
-					temp_operand2 := (others => '0');		
-					done <= '1';
-					
-				end if;	
-
+--				end if;	
+--				
+--				
+--				if  (not(Operand2 = x"00000000" or (Operand1 = x"00000000" and Operand2 /= x"00000000"))) then 
+--					
+--					if Operand1 >= Operand2 then 
+--
+--						--if temp_div_MSB <0 then 
+--						if temp_div_MSB(width-1) = '1' then 
+--						
+--							--shift left A, Q 
+--							temp_div_MSB := temp_div_MSB(width-2 downto 0)&temp_operand1(width-1);
+--							temp_operand1 := temp_operand1(width-2 downto 0)&'0'; --put 0 first
+--			
+--							-- A = A + M
+--							temp_div_MSB := temp_div_MSB + temp_operand2;
+--				
+--						else
+--							--shift left A, Q
+--							temp_div_MSB := temp_div_MSB(width-2 downto 0)&temp_operand1(width-1);
+--							temp_operand1 := temp_operand1(width-2 downto 0)&'0'; --put 0 first
+--					
+--							--A = A - M
+--							temp_div_MSB := temp_div_MSB + (not(temp_operand2) + 1); 	
+--						end if;			
+--				
+--						--if temp_div_MSB <0 then 
+--						if temp_div_MSB(width-1) = '1' then 
+--							temp_operand1(0) := '0';
+--						else
+--							temp_operand1(0) := '1';
+--						end if;
+--						
+--					end if;
+--					
+--				end if;
+--				
+--				div_count := div_count+1;	
+--					
+--				
+--				if div_count = X"20" then --33rd cycle 
+--					--if temp_div_MSB <0 then 
+--					if temp_div_MSB(width-1) = '1' then 
+--						--A = A+M
+--						temp_div_MSB := temp_div_MSB + temp_operand2;
+--					end if;
+--					
+--					
+--					
+--					remainder := temp_div_MSB;
+--					quotient := temp_operand1;
+--			
+--					Result1_multi <= quotient;
+--					Result2_multi <= remainder;		
+--					
+--					quotient  := (others => '0'); 
+--					remainder:= (others => '0'); 
+--					dividend:= (others => '0');
+--					divisor  := (others => '0');
+--					div_count := (others => '0');
+--					div_MSB := (others => '0');
+--					temp_div_MSB := (others => '0');
+--					temp_operand1 := (others => '0');
+--					temp_operand2 := (others => '0');		
+--					done <= '1';
+--					
+--				end if;	
+--
 
 		when "10010" =>  --DIV
-				if state = COMBINATIONAL then
-					if Operand2 = x"00000000" then -- zero divisor
-						Result1_multi <= (others => 'X');
-						Result2_multi <= (others => 'X');
-						done <= '1';
-					end if;
-					div_count := (others => '0');
-					dividend_temp := Operand1;
-					divisor_temp := Operand2;
-					divisor_temp_unsigned := Operand2;
-					quotient := Operand1;
-					divisor := Operand2;
-					
-					
-					if quotient(width-1) = '1' then
-						quotient := not(quotient) + 1;
-					end if;
-					if divisor(width-1) = '1' then
-						divisor := not(divisor)  + 1;
-						divisor_temp_unsigned := divisor;
-					end if;
-					remainder := (others => '0');
-				else
-				
-				if remainder(width-1) = '1' then 
-					remainder := remainder(width-2 downto 0)&quotient(width-1);
-					quotient := quotient(width-2 downto 0)&'0';
-					
-					remainder := remainder + divisor_temp_unsigned;					
-				else
-					remainder := remainder(width-2 downto 0)&quotient(width-1);
-					quotient := quotient(width-2 downto 0)&'0';
-					
-					remainder := remainder + not(divisor_temp_unsigned) + 1;
-				
-				end if;
-				
-				if remainder(width-1) = '1' then
-					quotient(0) := '0';
-				else
-					quotient(0) := '1';
-				end if;
-				
-				div_count := div_count + 1;
-				
-				if div_count = X"20" then
-					if remainder(width-1) = '1' then
-						remainder := divisor_temp_unsigned + remainder;
-					end if;
-					if (dividend_temp(width-1) /= divisor_temp(width-1)) then
-						quotient := not(quotient) + 1;
-					end if;
-					if (dividend_temp(width-1) /= remainder(width-1)) then
-						remainder := not(remainder)+ 1;
-					end if;
-					Result1_multi <= quotient;
-					Result2_multi <= remainder;
-					done <= '1';
-					dividend_temp := (others=>'0');
-					divisor_temp := (others=>'0');
-					quotient := (others=>'0');
-					divisor := (others=>'0');
-				end if;
-				
-			end if;
+--				if state = COMBINATIONAL then
+--					if Operand2 = x"00000000" then -- zero divisor
+--						Result1_multi <= (others => 'X');
+--						Result2_multi <= (others => 'X');
+--						done <= '1';
+--					end if;
+--					div_count := (others => '0');
+--					dividend_temp := Operand1;
+--					divisor_temp := Operand2;
+--					divisor_temp_unsigned := Operand2;
+--					quotient := Operand1;
+--					divisor := Operand2;
+--					
+--					
+--					if quotient(width-1) = '1' then
+--						quotient := not(quotient) + 1;
+--					end if;
+--					if divisor(width-1) = '1' then
+--						divisor := not(divisor)  + 1;
+--						divisor_temp_unsigned := divisor;
+--					end if;
+--					remainder := (others => '0');
+--				else
+--				
+--				if remainder(width-1) = '1' then 
+--					remainder := remainder(width-2 downto 0)&quotient(width-1);
+--					quotient := quotient(width-2 downto 0)&'0';
+--					
+--					remainder := remainder + divisor_temp_unsigned;					
+--				else
+--					remainder := remainder(width-2 downto 0)&quotient(width-1);
+--					quotient := quotient(width-2 downto 0)&'0';
+--					
+--					remainder := remainder + not(divisor_temp_unsigned) + 1;
+--				
+--				end if;
+--				
+--				if remainder(width-1) = '1' then
+--					quotient(0) := '0';
+--				else
+--					quotient(0) := '1';
+--				end if;
+--				
+--				div_count := div_count + 1;
+--				
+--				if div_count = X"20" then
+--					if remainder(width-1) = '1' then
+--						remainder := divisor_temp_unsigned + remainder;
+--					end if;
+--					if (dividend_temp(width-1) /= divisor_temp(width-1)) then
+--						quotient := not(quotient) + 1;
+--					end if;
+--					if (dividend_temp(width-1) /= remainder(width-1)) then
+--						remainder := not(remainder)+ 1;
+--					end if;
+--					Result1_multi <= quotient;
+--					Result2_multi <= remainder;
+--					done <= '1';
+--					dividend_temp := (others=>'0');
+--					divisor_temp := (others=>'0');
+--					quotient := (others=>'0');
+--					divisor := (others=>'0');
+--				end if;
+--				
+--			end if;
 				when others=> null;
 			end case;
-		end if;
+	end if;
 	end if;
 end process;
 

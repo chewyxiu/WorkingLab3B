@@ -114,17 +114,22 @@ BEGIN
 --		Data_in <= x"00000003";
 --		wait for CLK_period*10;
 --		
-		-- add $s2, $s0, $s1
+--		-- add $s2, $s0, $s1
 --		Instr <= "00000010000100011001000000100000"; -- op = 0, rs = 16, rt = 17, rd = 18, shamt = 0, funct = x20
 --		Data_in <= (others => '0');	
 --		wait for CLK_period*10;
-		
-----		--lw  $t4, 0($t0) 
+--		
+--		--lw  $t4, 0($t0) 
 --		Instr <= x"8d0c0000";
 --		Data_in <= (others => '0');	
 --		wait for CLK_period*10;
 --		
-----		--sw   $t4, 0($t0)
+--		--sll $t2, $t3, 0x0006
+--		Instr <= x"000b5180";
+--		Data_in <= (others => '0');	
+--		wait for CLK_period*10;
+--
+--		--sw   $t4, 0($t0)
 --		Instr <= x"ad0c0000";
 --		Data_in <= (others => '0');	
 --		wait for CLK_period*10;
@@ -143,17 +148,32 @@ BEGIN
 --		Instr <= "00111100000010000001000000000010";
 --		Data_in <= (others => '0');	
 --		wait for CLK_period*10;
-	
+--	
 --		--ori $t2, 0x0004
 --		Instr <= x"354a0004";
 --		Data_in <= (others => '0');	
 --		wait for CLK_period*10;
-	
-	
+--	
+--	
 --		-- sub $s5, $s3, $s4
 --		Instr <= "00000010011101001010100000100010"; -- op = 0, rs = 19, rt = 20, rd = 21, shamt = 0, funct = x20
 --		Data_in <= (others => '0');	
 --		wait for CLK_period*10;
+		
+		--srl $t2, $t2, 0x000a		
+		Instr <= x"000a5282";
+		Data_in <= (others => '0');	
+		wait for CLK_period*10;
+		
+		--sra $t2, $t2, 0x000c
+		Instr <= x"000a5303";
+		Data_in <= (others => '0');	
+		wait for CLK_period*10;
+
+		--sllv $t2, $t2, $t1
+		Instr <= x"012a5004";
+		Data_in <= (others => '0');	
+		wait for CLK_period*10;
 		
 --		-- lw $s4, 5
 --		Instr <= "10001100000101000000000000000101"; -- op = x23, rs = 0, rt = 20, imm = 5
@@ -166,10 +186,10 @@ BEGIN
 --		wait for CLK_period*10;
 --		
 
-      --    x"000b5180", -- 			sll $t2, $t3, 0x0006
-		Instr <= "00000000000010110101000110000000"; -- op = x08, rt = 18, rs = 20, imm = 7
-		Data_in <= (others => '0');
-		wait for CLK_period*10;
+--      --    x"000b5180", -- 			sll $t2, $t3, 0x0006
+--		Instr <= "00000000000010110101000110000000"; -- op = x08, rt = 18, rs = 20, imm = 7
+--		Data_in <= (others => '0');
+--		wait for CLK_period*10;
 
 
 		

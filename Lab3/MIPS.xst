@@ -1,5 +1,5 @@
-set -tmpdir "C:/Users/hp/Documents/GitHub/WorkingLab3B/Lab3/xst/projnav.tmp"
-set -xsthdpdir "C:/Users/hp/Documents/GitHub/WorkingLab3B/Lab3/xst"
+set -tmpdir "C:/Users/User/Documents/GitHub/WorkingLab3B/Lab3/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/User/Documents/GitHub/WorkingLab3B/Lab3/xst"
 run -compileonly yes
 -p xc7a100t-1-csg324
 -top MIPS
